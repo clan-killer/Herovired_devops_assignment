@@ -1,0 +1,31 @@
+NOTE : This installation guide is for Windows OS. Web Template used is Yummy
+
+Step 1 : Download apache package and paste the folder in C directory.
+			Download link : https://www.apachelounge.com/download/#google_vignette
+			Apache 2.4.57 Win64
+			Extract the package and paste the Apache24 directory in C folder
+			
+Step 2 : Go to the installed directory of Apache and paste the Web template "Yummy" under this directory.
+		--> C:\Apache24
+			
+Step 3 : Edit httpd.conf file for hosting as the Web template Yummy locally
+			C:\Apache24\conf\httpd.conf
+			DocumentRoot "${SRVROOT}/Yummy"
+			<Directory "${SRVROOT}/(template-name)">
+
+Step 4 : Edit in httpd-vhosts.conf file as below for DNS entry
+			DocumentRoot "${SRVROOT}/Yummy"
+			ServerName Yummy
+			ServerAlias www.yummy.com
+			
+Step 5 : Host entry.
+			Go to directory --> C:\Windows\System32\drivers\etc
+			Enter below lines --> 
+			127.0.0.1   yummy
+			127.0.0.1  www.yummy.com
+			
+Step 6 : Open cmd and start apache service.
+			Go to apache bin directory --> C:\Apache24\bin --> C:\Apache24\bin>httpd.exe
+			
+Step 7 : Open browser and type http://Yummy page will route to the newly added template
+			
